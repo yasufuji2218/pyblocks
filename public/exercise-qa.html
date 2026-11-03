@@ -1,0 +1,70 @@
+<!doctype html><html lang="ja"><meta charset="utf-8"><title>練習問題の実行検証</title><button id="qa-run">12問の模範解答を検証</button><pre id="qa-log">待機中</pre>
+<script src="https://cdn.jsdelivr.net/npm/blockly@12.3.1/blockly_compressed.js"></script><script src="https://cdn.jsdelivr.net/npm/blockly@12.3.1/blocks_compressed.js"></script><script src="https://cdn.jsdelivr.net/npm/blockly@12.3.1/python_compressed.js"></script><script src="https://cdn.jsdelivr.net/npm/blockly@12.3.1/msg/ja.js"></script>
+<script type="module">
+import {installLibraries} from './libraries.js';import {validateProblems} from './problem-model.js';import {runCases} from './test-runner.js';import {grade} from './grading.js';
+import {generateGradingCode} from './grading-code.js';
+import {installResilienceQA} from './resilience-qa.js';
+const g=python.pythonGenerator;
+installLibraries(Blockly,g);
+Blockly.defineBlocksWithJsonArray([{type:'python_input',message0:'入力 %1',args0:[{type:'input_value',name:'PROMPT'}],output:'String'},{type:'python_convert',message0:'%1 を %2',args0:[{type:'input_value',name:'VALUE'},{type:'field_dropdown',name:'TYPE',options:[['int','int'],['float','float'],['str','str']]}],output:null}]);
+g.forBlock.python_input=(b,g)=>[`input(${g.valueToCode(b,'PROMPT',g.ORDER_NONE)||"''"})`,g.ORDER_FUNCTION_CALL];
+g.forBlock.python_convert=(b,g)=>[`${b.getFieldValue('TYPE')}(${g.valueToCode(b,'VALUE',g.ORDER_NONE)||"''"})`,g.ORDER_FUNCTION_CALL];
+const log=document.getElementById('qa-log');
+installResilienceQA(Blockly,g,log);
+const attacks=document.createElement('button');attacks.textContent='12問の出力ベタ打ちを検証';document.getElementById('qa-run').after(attacks);
+const detached=document.createElement('button');detached.textContent='孤立した演算の再現検証';attacks.after(detached);
+detached.onclick=async()=>{
+ detached.disabled=true;
+ try{
+  const p=(await (await fetch('./problems/catalog.json')).json()).find(p=>p.id==='arithmetic_01');
+  const state=structuredClone(p.solution.workspace),expression=state.blocks.blocks[0].inputs.TEXT.block;
+  state.blocks.blocks[0].inputs.TEXT.block={type:'math_number',fields:{NUM:10}};
+  state.blocks.blocks.push({...expression,x:350,y:200});
+  const w=new Blockly.Workspace();
+  try{
+   Blockly.serialization.workspaces.load(state,w);const code=generateGradingCode(w,g),results=await runCases(code,p,{});
+   const result=grade(p,Blockly.serialization.workspaces.save(w),results);
+   log.textContent=`孤立した演算＋10の直接表示\n生成コード：\n${code}\n実出力：${results[0].output}\n${result.score}点 ${result.status}\n必須ブロック：${result.checks.required_blocks}\n${result.feedback}\n`;
+  }finally{w.dispose();}
+ }catch(e){log.textContent=e.stack;}finally{detached.disabled=false;}
+};
+attacks.onclick=async()=>{
+ attacks.disabled=true;log.textContent='ベタ打ち検証開始\n';let failures=0;
+ try{
+ const problems=await (await fetch('./problems/catalog.json')).json();
+ for(const p of problems){
+  const state={blocks:{blocks:[{type:'text_print',inputs:{TEXT:{block:{type:'text',fields:{TEXT:p.test_cases[0].expected_output}}}}}]}};
+  const w=new Blockly.Workspace();
+  try{
+   Blockly.serialization.workspaces.load(state,w);const code=generateGradingCode(w,g);
+   const results=await runCases(code,p,{});
+   const result=grade(p,Blockly.serialization.workspaces.save(w),results);
+   const expected=p.id==='print_01';
+   if((result.status==='完全正解')!==expected)failures++;
+   log.textContent+=`${p.id}: ${result.score}点 ${result.status} ${expected?'（文字表示自体が学習目的）':''}\n`;
+  }finally{w.dispose();}
+ }
+ log.textContent+=`完了：${problems.length}問、想定外${failures}問\n`;
+ }catch(e){log.textContent+=e.stack;}finally{attacks.disabled=false;}
+};
+document.getElementById('qa-run').onclick=async()=>{
+document.getElementById('qa-run').disabled=true;log.textContent='検証開始\n';
+try{
+const problems=validateProblems(await (await fetch('./problems/catalog.json')).json(),new Set(Object.keys(Blockly.Blocks)));
+let failures=0;
+for(const p of problems){
+ const w=new Blockly.Workspace();
+ try{
+ Blockly.serialization.workspaces.load(p.solution.workspace,w);
+ const code=generateGradingCode(w,g),names={};for(const v of w.getAllVariables())names[v.name]=g.nameDB_.getName(v.getId(),Blockly.Names.NameType.VARIABLE);
+ const results=await runCases(code,p,names,{onProgress:(i,n)=>{log.textContent+=`${p.id} ${i+1}/${n}\n`;}});
+ const result=grade(p,Blockly.serialization.workspaces.save(w),results);
+ log.textContent+=`${p.id}: ${result.score}点 ${result.status}\n`;
+ if(result.status!=='完全正解'){failures++;log.textContent+=JSON.stringify({code,result,results})+'\n';}
+ }catch(e){failures++;log.textContent+=`${p.id}: ${e.stack}\n`;}finally{w.dispose();}
+}
+log.textContent+=`完了：${problems.length}問、失敗${failures}問\n`;
+}catch(e){log.textContent+=e.stack;}
+document.getElementById('qa-run').disabled=false;
+};
+</script></html>

@@ -1,0 +1,3374 @@
+[
+  {
+    "id": "print_01",
+    "course": "basic",
+    "category": "print",
+    "difficulty": 1,
+    "type": "build",
+    "title": "こんにちはを表示",
+    "description": "ブロックとPythonの対応を確かめながら取り組みましょう。",
+    "instruction": "「こんにちは」を1行表示してください。",
+    "available_blocks": [
+      "text_print",
+      "text",
+      "math_number",
+      "variables_set",
+      "variables_get",
+      "math_arithmetic",
+      "logic_compare",
+      "logic_boolean",
+      "python_input",
+      "python_convert",
+      "math_change"
+    ],
+    "required_blocks": [
+      "text_print"
+    ],
+    "forbidden_blocks": [],
+    "initial_blocks": {
+      "variables": [],
+      "blocks": {
+        "languageVersion": 0,
+        "blocks": []
+      }
+    },
+    "test_cases": [
+      {
+        "input": [],
+        "expected_output": "こんにちは",
+        "visibility": "public"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "「こんにちは」を1行表示してください。"
+      },
+      {
+        "level": 2,
+        "text": "使うブロック：text_print"
+      },
+      {
+        "level": 3,
+        "text": "入力・値の準備 → 計算や条件・繰り返し → 表示、の順に組み立てましょう。"
+      },
+      {
+        "level": 4,
+        "text": "公開テストの入力を紙に書き、変数の値を1つずつ追ってみましょう。"
+      }
+    ],
+    "solution": {
+      "workspace": {
+        "variables": [],
+        "blocks": {
+          "languageVersion": 0,
+          "blocks": [
+            {
+              "type": "text_print",
+              "fields": {},
+              "inputs": {
+                "TEXT": {
+                  "block": {
+                    "type": "text",
+                    "fields": {
+                      "TEXT": "こんにちは"
+                    },
+                    "id": "print_01.0.TEXT"
+                  }
+                }
+              },
+              "x": 45,
+              "y": 45,
+              "id": "print_01.0"
+            }
+          ]
+        }
+      }
+    },
+    "grading": {
+      "score": {
+        "output": 30,
+        "test_cases": 30,
+        "required_blocks": 20,
+        "learning": 20
+      },
+      "completion_requirements": [
+        "output",
+        "test_cases",
+        "required_blocks",
+        "state",
+        "nesting",
+        "functions"
+      ],
+      "timeout_ms": 3000,
+      "feedback_steps": [
+        "問題の指示と処理の順番を見直しましょう。",
+        "公開テストを手で計算し、境界の値も調べましょう。",
+        "ヒントを次の段階まで開いて、使うブロックと構造を確認しましょう。"
+      ],
+      "learning": [
+        {
+          "type": "text_print",
+          "inputs": {
+            "TEXT": {
+              "type": "text",
+              "fields": {
+                "TEXT": "こんにちは"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "forbidden_block_scope": "executable"
+  },
+  {
+    "id": "variable_01",
+    "course": "basic",
+    "category": "variable",
+    "difficulty": 1,
+    "type": "fill",
+    "title": "変数の値を埋めよう",
+    "description": "ブロックとPythonの対応を確かめながら取り組みましょう。",
+    "instruction": "固定された代入ブロックの空欄に10を入れ、xを表示してください。",
+    "available_blocks": [
+      "text_print",
+      "text",
+      "math_number",
+      "variables_set",
+      "variables_get",
+      "math_arithmetic",
+      "logic_compare",
+      "logic_boolean",
+      "python_input",
+      "python_convert",
+      "math_change"
+    ],
+    "required_blocks": [
+      "variables_set"
+    ],
+    "forbidden_blocks": [],
+    "initial_blocks": {
+      "variables": [
+        {
+          "name": "x",
+          "id": "x"
+        }
+      ],
+      "blocks": {
+        "languageVersion": 0,
+        "blocks": [
+          {
+            "type": "variables_set",
+            "fields": {
+              "VAR": {
+                "id": "x"
+              }
+            },
+            "inputs": {},
+            "id": "fixed-set",
+            "locked": true,
+            "next": {
+              "block": {
+                "type": "text_print",
+                "fields": {},
+                "inputs": {
+                  "TEXT": {
+                    "block": {
+                      "type": "variables_get",
+                      "fields": {
+                        "VAR": {
+                          "id": "x"
+                        }
+                      },
+                      "id": "variable_01.0.next.TEXT"
+                    }
+                  }
+                },
+                "id": "variable_01.0.next"
+              }
+            },
+            "x": 45,
+            "y": 45
+          }
+        ]
+      }
+    },
+    "test_cases": [
+      {
+        "input": [],
+        "expected_output": "10",
+        "visibility": "public",
+        "expected_state": {
+          "x": 10
+        }
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "固定された代入ブロックの空欄に10を入れ、xを表示してください。"
+      },
+      {
+        "level": 2,
+        "text": "使うブロック：variables_set"
+      },
+      {
+        "level": 3,
+        "text": "入力・値の準備 → 計算や条件・繰り返し → 表示、の順に組み立てましょう。"
+      },
+      {
+        "level": 4,
+        "text": "公開テストの入力を紙に書き、変数の値を1つずつ追ってみましょう。"
+      }
+    ],
+    "solution": {
+      "workspace": {
+        "variables": [
+          {
+            "name": "x",
+            "id": "x"
+          }
+        ],
+        "blocks": {
+          "languageVersion": 0,
+          "blocks": [
+            {
+              "type": "variables_set",
+              "fields": {
+                "VAR": {
+                  "id": "x"
+                }
+              },
+              "inputs": {
+                "VALUE": {
+                  "block": {
+                    "type": "math_number",
+                    "fields": {
+                      "NUM": 10
+                    },
+                    "id": "variable_01.0.VALUE"
+                  }
+                }
+              },
+              "id": "fixed-set",
+              "locked": true,
+              "next": {
+                "block": {
+                  "type": "text_print",
+                  "fields": {},
+                  "inputs": {
+                    "TEXT": {
+                      "block": {
+                        "type": "variables_get",
+                        "fields": {
+                          "VAR": {
+                            "id": "x"
+                          }
+                        },
+                        "id": "variable_01.0.next.TEXT"
+                      }
+                    }
+                  },
+                  "id": "variable_01.0.next"
+                }
+              },
+              "x": 45,
+              "y": 45
+            }
+          ]
+        }
+      }
+    },
+    "grading": {
+      "score": {
+        "output": 30,
+        "test_cases": 30,
+        "required_blocks": 20,
+        "learning": 20
+      },
+      "completion_requirements": [
+        "output",
+        "test_cases",
+        "required_blocks",
+        "state",
+        "nesting",
+        "functions"
+      ],
+      "timeout_ms": 3000,
+      "feedback_steps": [
+        "問題の指示と処理の順番を見直しましょう。",
+        "公開テストを手で計算し、境界の値も調べましょう。",
+        "ヒントを次の段階まで開いて、使うブロックと構造を確認しましょう。"
+      ],
+      "output_variables": [
+        "x"
+      ],
+      "learning": [
+        {
+          "type": "variables_set",
+          "variable": "x",
+          "inputs": {
+            "VALUE": {
+              "type": "math_number",
+              "fields": {
+                "NUM": 10
+              }
+            }
+          }
+        },
+        {
+          "type": "text_print",
+          "inputs": {
+            "TEXT": {
+              "type": "variables_get",
+              "variable": "x",
+              "observed": 10
+            }
+          }
+        }
+      ]
+    },
+    "forbidden_block_scope": "executable"
+  },
+  {
+    "id": "arithmetic_01",
+    "course": "basic",
+    "category": "arithmetic",
+    "difficulty": 2,
+    "type": "fix",
+    "title": "計算を修正",
+    "description": "ブロックとPythonの対応を確かめながら取り組みましょう。",
+    "instruction": "7と3の合計を表示するように修正してください。",
+    "available_blocks": [
+      "text_print",
+      "text",
+      "math_number",
+      "variables_set",
+      "variables_get",
+      "math_arithmetic",
+      "logic_compare",
+      "logic_boolean",
+      "python_input",
+      "python_convert",
+      "math_change"
+    ],
+    "required_blocks": [
+      "math_arithmetic"
+    ],
+    "forbidden_blocks": [],
+    "initial_blocks": {
+      "variables": [],
+      "blocks": {
+        "languageVersion": 0,
+        "blocks": [
+          {
+            "type": "text_print",
+            "fields": {},
+            "inputs": {
+              "TEXT": {
+                "block": {
+                  "type": "math_arithmetic",
+                  "fields": {
+                    "OP": "MINUS"
+                  },
+                  "inputs": {
+                    "A": {
+                      "block": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 7
+                        },
+                        "id": "arithmetic_01.0.TEXT.A"
+                      }
+                    },
+                    "B": {
+                      "block": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 3
+                        },
+                        "id": "arithmetic_01.0.TEXT.B"
+                      }
+                    }
+                  },
+                  "id": "arithmetic_01.0.TEXT"
+                }
+              }
+            },
+            "x": 45,
+            "y": 45,
+            "id": "arithmetic_01.0"
+          }
+        ]
+      }
+    },
+    "test_cases": [
+      {
+        "input": [],
+        "expected_output": "10",
+        "visibility": "public"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "7と3の合計を表示するように修正してください。"
+      },
+      {
+        "level": 2,
+        "text": "使うブロック：math_arithmetic"
+      },
+      {
+        "level": 3,
+        "text": "入力・値の準備 → 計算や条件・繰り返し → 表示、の順に組み立てましょう。"
+      },
+      {
+        "level": 4,
+        "text": "公開テストの入力を紙に書き、変数の値を1つずつ追ってみましょう。"
+      }
+    ],
+    "solution": {
+      "workspace": {
+        "variables": [],
+        "blocks": {
+          "languageVersion": 0,
+          "blocks": [
+            {
+              "type": "text_print",
+              "fields": {},
+              "inputs": {
+                "TEXT": {
+                  "block": {
+                    "type": "math_arithmetic",
+                    "fields": {
+                      "OP": "ADD"
+                    },
+                    "inputs": {
+                      "A": {
+                        "block": {
+                          "type": "math_number",
+                          "fields": {
+                            "NUM": 7
+                          },
+                          "id": "arithmetic_01.0.TEXT.A"
+                        }
+                      },
+                      "B": {
+                        "block": {
+                          "type": "math_number",
+                          "fields": {
+                            "NUM": 3
+                          },
+                          "id": "arithmetic_01.0.TEXT.B"
+                        }
+                      }
+                    },
+                    "id": "arithmetic_01.0.TEXT"
+                  }
+                }
+              },
+              "x": 45,
+              "y": 45,
+              "id": "arithmetic_01.0"
+            }
+          ]
+        }
+      }
+    },
+    "grading": {
+      "score": {
+        "output": 30,
+        "test_cases": 30,
+        "required_blocks": 20,
+        "learning": 20
+      },
+      "completion_requirements": [
+        "output",
+        "test_cases",
+        "required_blocks",
+        "state",
+        "nesting",
+        "functions"
+      ],
+      "timeout_ms": 3000,
+      "feedback_steps": [
+        "問題の指示と処理の順番を見直しましょう。",
+        "公開テストを手で計算し、境界の値も調べましょう。",
+        "ヒントを次の段階まで開いて、使うブロックと構造を確認しましょう。"
+      ],
+      "nesting": [
+        [
+          "print",
+          "math_arithmetic"
+        ]
+      ],
+      "learning": [
+        {
+          "type": "text_print",
+          "inputs": {
+            "TEXT": {
+              "anyOf": [
+                {
+                  "type": "math_arithmetic",
+                  "fields": {
+                    "OP": "ADD"
+                  },
+                  "inputs": {
+                    "A": {
+                      "type": "math_number",
+                      "fields": {
+                        "NUM": 7
+                      }
+                    },
+                    "B": {
+                      "type": "math_number",
+                      "fields": {
+                        "NUM": 3
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "math_arithmetic",
+                  "fields": {
+                    "OP": "ADD"
+                  },
+                  "inputs": {
+                    "A": {
+                      "type": "math_number",
+                      "fields": {
+                        "NUM": 3
+                      }
+                    },
+                    "B": {
+                      "type": "math_number",
+                      "fields": {
+                        "NUM": 7
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "forbidden_block_scope": "executable"
+  },
+  {
+    "id": "input_01",
+    "course": "basic",
+    "category": "input",
+    "difficulty": 2,
+    "type": "build",
+    "title": "入力の2倍",
+    "description": "ブロックとPythonの対応を確かめながら取り組みましょう。",
+    "instruction": "整数を1つ入力し、入力値と2を掛ける演算ブロックの結果を直接表示してください。",
+    "available_blocks": [
+      "text_print",
+      "text",
+      "math_number",
+      "variables_set",
+      "variables_get",
+      "math_arithmetic",
+      "logic_compare",
+      "logic_boolean",
+      "python_input",
+      "python_convert",
+      "math_change"
+    ],
+    "required_blocks": [
+      "python_input",
+      "math_arithmetic"
+    ],
+    "forbidden_blocks": [],
+    "initial_blocks": {
+      "variables": [],
+      "blocks": {
+        "languageVersion": 0,
+        "blocks": []
+      }
+    },
+    "test_cases": [
+      {
+        "input": [
+          "4"
+        ],
+        "expected_output": "8",
+        "visibility": "public"
+      },
+      {
+        "input": [
+          "-2"
+        ],
+        "expected_output": "-4",
+        "visibility": "hidden"
+      },
+      {
+        "input": [
+          "0"
+        ],
+        "expected_output": "0",
+        "visibility": "hidden"
+      },
+      {
+        "input": [
+          "11"
+        ],
+        "expected_output": "22",
+        "visibility": "hidden"
+      },
+      {
+        "input": [
+          "-17"
+        ],
+        "expected_output": "-34",
+        "visibility": "hidden"
+      },
+      {
+        "input": [
+          "37"
+        ],
+        "expected_output": "74",
+        "visibility": "hidden"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "整数を1つ入力し、入力値と2を掛ける演算ブロックの結果を直接表示してください。"
+      },
+      {
+        "level": 2,
+        "text": "使うブロック：python_input、math_arithmetic"
+      },
+      {
+        "level": 3,
+        "text": "入力・値の準備 → 計算や条件・繰り返し → 表示、の順に組み立てましょう。"
+      },
+      {
+        "level": 4,
+        "text": "公開テストの入力を紙に書き、変数の値を1つずつ追ってみましょう。"
+      }
+    ],
+    "solution": {
+      "workspace": {
+        "variables": [],
+        "blocks": {
+          "languageVersion": 0,
+          "blocks": [
+            {
+              "type": "text_print",
+              "fields": {},
+              "inputs": {
+                "TEXT": {
+                  "block": {
+                    "type": "math_arithmetic",
+                    "fields": {
+                      "OP": "MULTIPLY"
+                    },
+                    "inputs": {
+                      "A": {
+                        "block": {
+                          "type": "python_convert",
+                          "fields": {
+                            "TYPE": "int"
+                          },
+                          "inputs": {
+                            "VALUE": {
+                              "block": {
+                                "type": "python_input",
+                                "fields": {},
+                                "inputs": {
+                                  "PROMPT": {
+                                    "block": {
+                                      "type": "text",
+                                      "fields": {
+                                        "TEXT": ""
+                                      },
+                                      "id": "input_01.0.TEXT.A.VALUE.PROMPT"
+                                    }
+                                  }
+                                },
+                                "id": "input_01.0.TEXT.A.VALUE"
+                              }
+                            }
+                          },
+                          "id": "input_01.0.TEXT.A"
+                        }
+                      },
+                      "B": {
+                        "block": {
+                          "type": "math_number",
+                          "fields": {
+                            "NUM": 2
+                          },
+                          "id": "input_01.0.TEXT.B"
+                        }
+                      }
+                    },
+                    "id": "input_01.0.TEXT"
+                  }
+                }
+              },
+              "x": 45,
+              "y": 45,
+              "id": "input_01.0"
+            }
+          ]
+        }
+      }
+    },
+    "grading": {
+      "score": {
+        "output": 30,
+        "test_cases": 30,
+        "required_blocks": 20,
+        "learning": 20
+      },
+      "completion_requirements": [
+        "output",
+        "test_cases",
+        "required_blocks",
+        "state",
+        "nesting",
+        "functions"
+      ],
+      "timeout_ms": 3000,
+      "feedback_steps": [
+        "問題の指示と処理の順番を見直しましょう。",
+        "公開テストを手で計算し、境界の値も調べましょう。",
+        "ヒントを次の段階まで開いて、使うブロックと構造を確認しましょう。"
+      ],
+      "nesting": [
+        [
+          "print",
+          "math_arithmetic",
+          "python_input"
+        ]
+      ],
+      "learning": [
+        {
+          "type": "text_print",
+          "inputs": {
+            "TEXT": {
+              "anyOf": [
+                {
+                  "type": "math_arithmetic",
+                  "fields": {
+                    "OP": "MULTIPLY"
+                  },
+                  "inputs": {
+                    "A": {
+                      "type": "python_convert",
+                      "fields": {
+                        "TYPE": "int"
+                      },
+                      "inputs": {
+                        "VALUE": {
+                          "type": "python_input"
+                        }
+                      }
+                    },
+                    "B": {
+                      "type": "math_number",
+                      "fields": {
+                        "NUM": 2
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "math_arithmetic",
+                  "fields": {
+                    "OP": "MULTIPLY"
+                  },
+                  "inputs": {
+                    "A": {
+                      "type": "math_number",
+                      "fields": {
+                        "NUM": 2
+                      }
+                    },
+                    "B": {
+                      "type": "python_convert",
+                      "fields": {
+                        "TYPE": "int"
+                      },
+                      "inputs": {
+                        "VALUE": {
+                          "type": "python_input"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "forbidden_block_scope": "executable"
+  },
+  {
+    "id": "if_01",
+    "course": "basic",
+    "category": "if",
+    "difficulty": 2,
+    "type": "build",
+    "title": "数の符号",
+    "description": "ブロックとPythonの対応を確かめながら取り組みましょう。",
+    "instruction": "整数を変数xに入力し、xが0以上なら「非負」、負なら「負」をif / elseで表示してください。",
+    "available_blocks": [
+      "text_print",
+      "text",
+      "math_number",
+      "variables_set",
+      "variables_get",
+      "math_arithmetic",
+      "logic_compare",
+      "logic_boolean",
+      "python_input",
+      "python_convert",
+      "math_change",
+      "controls_if"
+    ],
+    "required_blocks": [
+      "if"
+    ],
+    "forbidden_blocks": [],
+    "initial_blocks": {
+      "variables": [],
+      "blocks": {
+        "languageVersion": 0,
+        "blocks": []
+      }
+    },
+    "test_cases": [
+      {
+        "input": [
+          "3"
+        ],
+        "expected_output": "非負",
+        "visibility": "public"
+      },
+      {
+        "input": [
+          "-1"
+        ],
+        "expected_output": "負",
+        "visibility": "public"
+      },
+      {
+        "input": [
+          "0"
+        ],
+        "expected_output": "非負",
+        "visibility": "hidden"
+      },
+      {
+        "input": [
+          "-20"
+        ],
+        "expected_output": "負",
+        "visibility": "hidden"
+      },
+      {
+        "input": [
+          "-9999"
+        ],
+        "expected_output": "負",
+        "visibility": "hidden"
+      },
+      {
+        "input": [
+          "9999"
+        ],
+        "expected_output": "非負",
+        "visibility": "hidden"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "整数を変数xに入力し、xが0以上なら「非負」、負なら「負」をif / elseで表示してください。"
+      },
+      {
+        "level": 2,
+        "text": "使うブロック：if"
+      },
+      {
+        "level": 3,
+        "text": "入力・値の準備 → 計算や条件・繰り返し → 表示、の順に組み立てましょう。"
+      },
+      {
+        "level": 4,
+        "text": "公開テストの入力を紙に書き、変数の値を1つずつ追ってみましょう。"
+      }
+    ],
+    "solution": {
+      "workspace": {
+        "variables": [
+          {
+            "name": "x",
+            "id": "x"
+          }
+        ],
+        "blocks": {
+          "languageVersion": 0,
+          "blocks": [
+            {
+              "type": "variables_set",
+              "fields": {
+                "VAR": {
+                  "id": "x"
+                }
+              },
+              "inputs": {
+                "VALUE": {
+                  "block": {
+                    "type": "python_convert",
+                    "fields": {
+                      "TYPE": "int"
+                    },
+                    "inputs": {
+                      "VALUE": {
+                        "block": {
+                          "type": "python_input",
+                          "fields": {},
+                          "inputs": {
+                            "PROMPT": {
+                              "block": {
+                                "type": "text",
+                                "fields": {
+                                  "TEXT": ""
+                                },
+                                "id": "if_01.0.VALUE.VALUE.PROMPT"
+                              }
+                            }
+                          },
+                          "id": "if_01.0.VALUE.VALUE"
+                        }
+                      }
+                    },
+                    "id": "if_01.0.VALUE"
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "controls_if",
+                  "fields": {},
+                  "inputs": {
+                    "IF0": {
+                      "block": {
+                        "type": "logic_compare",
+                        "fields": {
+                          "OP": "GTE"
+                        },
+                        "inputs": {
+                          "A": {
+                            "block": {
+                              "type": "variables_get",
+                              "fields": {
+                                "VAR": {
+                                  "id": "x"
+                                }
+                              },
+                              "id": "if_01.0.next.IF0.A"
+                            }
+                          },
+                          "B": {
+                            "block": {
+                              "type": "math_number",
+                              "fields": {
+                                "NUM": 0
+                              },
+                              "id": "if_01.0.next.IF0.B"
+                            }
+                          }
+                        },
+                        "id": "if_01.0.next.IF0"
+                      }
+                    },
+                    "DO0": {
+                      "block": {
+                        "type": "text_print",
+                        "fields": {},
+                        "inputs": {
+                          "TEXT": {
+                            "block": {
+                              "type": "text",
+                              "fields": {
+                                "TEXT": "非負"
+                              },
+                              "id": "if_01.0.next.DO0.TEXT"
+                            }
+                          }
+                        },
+                        "id": "if_01.0.next.DO0"
+                      }
+                    },
+                    "ELSE": {
+                      "block": {
+                        "type": "text_print",
+                        "fields": {},
+                        "inputs": {
+                          "TEXT": {
+                            "block": {
+                              "type": "text",
+                              "fields": {
+                                "TEXT": "負"
+                              },
+                              "id": "if_01.0.next.ELSE.TEXT"
+                            }
+                          }
+                        },
+                        "id": "if_01.0.next.ELSE"
+                      }
+                    }
+                  },
+                  "extraState": {
+                    "hasElse": true
+                  },
+                  "id": "if_01.0.next"
+                }
+              },
+              "x": 45,
+              "y": 45,
+              "id": "if_01.0"
+            }
+          ]
+        }
+      }
+    },
+    "grading": {
+      "score": {
+        "output": 30,
+        "test_cases": 30,
+        "required_blocks": 20,
+        "learning": 20
+      },
+      "completion_requirements": [
+        "output",
+        "test_cases",
+        "required_blocks",
+        "state",
+        "nesting",
+        "functions"
+      ],
+      "timeout_ms": 3000,
+      "feedback_steps": [
+        "問題の指示と処理の順番を見直しましょう。",
+        "公開テストを手で計算し、境界の値も調べましょう。",
+        "ヒントを次の段階まで開いて、使うブロックと構造を確認しましょう。"
+      ],
+      "nesting": [
+        [
+          "if",
+          "print"
+        ]
+      ],
+      "learning": [
+        {
+          "type": "variables_set",
+          "variable": "x",
+          "inputs": {
+            "VALUE": {
+              "type": "python_convert",
+              "fields": {
+                "TYPE": "int"
+              },
+              "inputs": {
+                "VALUE": {
+                  "type": "python_input"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "controls_if",
+          "inputs": {
+            "IF0": {
+              "type": "logic_compare",
+              "fields": {
+                "OP": "GTE"
+              },
+              "inputs": {
+                "A": {
+                  "type": "variables_get",
+                  "variable": "x"
+                },
+                "B": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 0
+                  }
+                }
+              }
+            },
+            "DO0": {
+              "type": "text_print",
+              "inputs": {
+                "TEXT": {
+                  "type": "text",
+                  "fields": {
+                    "TEXT": "非負"
+                  }
+                }
+              }
+            },
+            "ELSE": {
+              "type": "text_print",
+              "inputs": {
+                "TEXT": {
+                  "type": "text",
+                  "fields": {
+                    "TEXT": "負"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "forbidden_block_scope": "executable"
+  },
+  {
+    "id": "for_01",
+    "course": "basic",
+    "category": "for",
+    "difficulty": 2,
+    "type": "fix",
+    "title": "最後の5まで",
+    "description": "ブロックとPythonの対応を確かめながら取り組みましょう。",
+    "instruction": "変数iを1から5まで1ずつ増やすforの内側で、iを直接表示してください。whileは禁止です。",
+    "available_blocks": [
+      "text_print",
+      "text",
+      "math_number",
+      "variables_set",
+      "variables_get",
+      "math_arithmetic",
+      "logic_compare",
+      "logic_boolean",
+      "python_input",
+      "python_convert",
+      "math_change",
+      "controls_for",
+      "controls_repeat_ext",
+      "controls_forEach"
+    ],
+    "required_blocks": [
+      "for"
+    ],
+    "forbidden_blocks": [
+      "while"
+    ],
+    "initial_blocks": {
+      "variables": [
+        {
+          "name": "i",
+          "id": "i"
+        }
+      ],
+      "blocks": {
+        "languageVersion": 0,
+        "blocks": [
+          {
+            "type": "controls_for",
+            "fields": {
+              "VAR": {
+                "id": "i"
+              }
+            },
+            "inputs": {
+              "FROM": {
+                "block": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 1
+                  },
+                  "id": "for_01.0.FROM"
+                }
+              },
+              "TO": {
+                "block": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 4
+                  },
+                  "id": "for_01.0.TO"
+                }
+              },
+              "BY": {
+                "block": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 1
+                  },
+                  "id": "for_01.0.BY"
+                }
+              },
+              "DO": {
+                "block": {
+                  "type": "text_print",
+                  "fields": {},
+                  "inputs": {
+                    "TEXT": {
+                      "block": {
+                        "type": "variables_get",
+                        "fields": {
+                          "VAR": {
+                            "id": "i"
+                          }
+                        },
+                        "id": "for_01.0.DO.TEXT"
+                      }
+                    }
+                  },
+                  "id": "for_01.0.DO"
+                }
+              }
+            },
+            "x": 45,
+            "y": 45,
+            "id": "for_01.0"
+          }
+        ]
+      }
+    },
+    "test_cases": [
+      {
+        "input": [],
+        "expected_output": "1\n2\n3\n4\n5",
+        "visibility": "public",
+        "expected_state": {
+          "i": 5
+        }
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "変数iを1から5まで1ずつ増やすforの内側で、iを直接表示してください。whileは禁止です。"
+      },
+      {
+        "level": 2,
+        "text": "使うブロック：for"
+      },
+      {
+        "level": 3,
+        "text": "入力・値の準備 → 計算や条件・繰り返し → 表示、の順に組み立てましょう。"
+      },
+      {
+        "level": 4,
+        "text": "公開テストの入力を紙に書き、変数の値を1つずつ追ってみましょう。"
+      }
+    ],
+    "solution": {
+      "workspace": {
+        "variables": [
+          {
+            "name": "i",
+            "id": "i"
+          }
+        ],
+        "blocks": {
+          "languageVersion": 0,
+          "blocks": [
+            {
+              "type": "controls_for",
+              "fields": {
+                "VAR": {
+                  "id": "i"
+                }
+              },
+              "inputs": {
+                "FROM": {
+                  "block": {
+                    "type": "math_number",
+                    "fields": {
+                      "NUM": 1
+                    },
+                    "id": "for_01.0.FROM"
+                  }
+                },
+                "TO": {
+                  "block": {
+                    "type": "math_number",
+                    "fields": {
+                      "NUM": 5
+                    },
+                    "id": "for_01.0.TO"
+                  }
+                },
+                "BY": {
+                  "block": {
+                    "type": "math_number",
+                    "fields": {
+                      "NUM": 1
+                    },
+                    "id": "for_01.0.BY"
+                  }
+                },
+                "DO": {
+                  "block": {
+                    "type": "text_print",
+                    "fields": {},
+                    "inputs": {
+                      "TEXT": {
+                        "block": {
+                          "type": "variables_get",
+                          "fields": {
+                            "VAR": {
+                              "id": "i"
+                            }
+                          },
+                          "id": "for_01.0.DO.TEXT"
+                        }
+                      }
+                    },
+                    "id": "for_01.0.DO"
+                  }
+                }
+              },
+              "x": 45,
+              "y": 45,
+              "id": "for_01.0"
+            }
+          ]
+        }
+      }
+    },
+    "grading": {
+      "score": {
+        "output": 30,
+        "test_cases": 30,
+        "required_blocks": 20,
+        "learning": 20
+      },
+      "completion_requirements": [
+        "output",
+        "test_cases",
+        "required_blocks",
+        "state",
+        "nesting",
+        "functions"
+      ],
+      "timeout_ms": 3000,
+      "feedback_steps": [
+        "問題の指示と処理の順番を見直しましょう。",
+        "公開テストを手で計算し、境界の値も調べましょう。",
+        "ヒントを次の段階まで開いて、使うブロックと構造を確認しましょう。"
+      ],
+      "nesting": [
+        [
+          "for",
+          "print"
+        ]
+      ],
+      "output_variables": [
+        "i"
+      ],
+      "learning": [
+        {
+          "type": "controls_for",
+          "variable": "i",
+          "inputs": {
+            "FROM": {
+              "type": "math_number",
+              "fields": {
+                "NUM": 1
+              }
+            },
+            "TO": {
+              "type": "math_number",
+              "fields": {
+                "NUM": 5
+              }
+            },
+            "BY": {
+              "type": "math_number",
+              "fields": {
+                "NUM": 1
+              }
+            },
+            "DO": {
+              "type": "text_print",
+              "inputs": {
+                "TEXT": {
+                  "type": "variables_get",
+                  "variable": "i"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "forbidden_block_scope": "executable"
+  },
+  {
+    "id": "while_01",
+    "course": "basic",
+    "category": "while",
+    "difficulty": 3,
+    "type": "build",
+    "title": "カウントダウン",
+    "description": "ブロックとPythonの対応を確かめながら取り組みましょう。",
+    "instruction": "0以上の整数を変数xに入力し、x > 0の間、xを直接表示して1減らしてください。0なら何も表示しません。",
+    "available_blocks": [
+      "text_print",
+      "text",
+      "math_number",
+      "variables_set",
+      "variables_get",
+      "math_arithmetic",
+      "logic_compare",
+      "logic_boolean",
+      "python_input",
+      "python_convert",
+      "math_change",
+      "controls_whileUntil"
+    ],
+    "required_blocks": [
+      "while"
+    ],
+    "forbidden_blocks": [],
+    "initial_blocks": {
+      "variables": [],
+      "blocks": {
+        "languageVersion": 0,
+        "blocks": []
+      }
+    },
+    "test_cases": [
+      {
+        "input": [
+          "3"
+        ],
+        "expected_output": "3\n2\n1",
+        "visibility": "public",
+        "expected_state": {
+          "x": 0
+        }
+      },
+      {
+        "input": [
+          "0"
+        ],
+        "expected_output": "",
+        "visibility": "hidden",
+        "expected_state": {
+          "x": 0
+        }
+      },
+      {
+        "input": [
+          "1"
+        ],
+        "expected_output": "1",
+        "visibility": "hidden",
+        "expected_state": {
+          "x": 0
+        }
+      },
+      {
+        "input": [
+          "5"
+        ],
+        "expected_output": "5\n4\n3\n2\n1",
+        "visibility": "hidden",
+        "expected_state": {
+          "x": 0
+        }
+      },
+      {
+        "input": [
+          "2"
+        ],
+        "expected_output": "2\n1",
+        "visibility": "hidden",
+        "expected_state": {
+          "x": 0
+        }
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "0以上の整数を変数xに入力し、x > 0の間、xを直接表示して1減らしてください。0なら何も表示しません。"
+      },
+      {
+        "level": 2,
+        "text": "使うブロック：while"
+      },
+      {
+        "level": 3,
+        "text": "入力・値の準備 → 計算や条件・繰り返し → 表示、の順に組み立てましょう。"
+      },
+      {
+        "level": 4,
+        "text": "公開テストの入力を紙に書き、変数の値を1つずつ追ってみましょう。"
+      }
+    ],
+    "solution": {
+      "workspace": {
+        "variables": [
+          {
+            "name": "x",
+            "id": "x"
+          }
+        ],
+        "blocks": {
+          "languageVersion": 0,
+          "blocks": [
+            {
+              "type": "variables_set",
+              "fields": {
+                "VAR": {
+                  "id": "x"
+                }
+              },
+              "inputs": {
+                "VALUE": {
+                  "block": {
+                    "type": "python_convert",
+                    "fields": {
+                      "TYPE": "int"
+                    },
+                    "inputs": {
+                      "VALUE": {
+                        "block": {
+                          "type": "python_input",
+                          "fields": {},
+                          "inputs": {
+                            "PROMPT": {
+                              "block": {
+                                "type": "text",
+                                "fields": {
+                                  "TEXT": ""
+                                },
+                                "id": "while_01.0.VALUE.VALUE.PROMPT"
+                              }
+                            }
+                          },
+                          "id": "while_01.0.VALUE.VALUE"
+                        }
+                      }
+                    },
+                    "id": "while_01.0.VALUE"
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "controls_whileUntil",
+                  "fields": {
+                    "MODE": "WHILE"
+                  },
+                  "inputs": {
+                    "BOOL": {
+                      "block": {
+                        "type": "logic_compare",
+                        "fields": {
+                          "OP": "GT"
+                        },
+                        "inputs": {
+                          "A": {
+                            "block": {
+                              "type": "variables_get",
+                              "fields": {
+                                "VAR": {
+                                  "id": "x"
+                                }
+                              },
+                              "id": "while_01.0.next.BOOL.A"
+                            }
+                          },
+                          "B": {
+                            "block": {
+                              "type": "math_number",
+                              "fields": {
+                                "NUM": 0
+                              },
+                              "id": "while_01.0.next.BOOL.B"
+                            }
+                          }
+                        },
+                        "id": "while_01.0.next.BOOL"
+                      }
+                    },
+                    "DO": {
+                      "block": {
+                        "type": "text_print",
+                        "fields": {},
+                        "inputs": {
+                          "TEXT": {
+                            "block": {
+                              "type": "variables_get",
+                              "fields": {
+                                "VAR": {
+                                  "id": "x"
+                                }
+                              },
+                              "id": "while_01.0.next.DO.TEXT"
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "variables_set",
+                            "fields": {
+                              "VAR": {
+                                "id": "x"
+                              }
+                            },
+                            "inputs": {
+                              "VALUE": {
+                                "block": {
+                                  "type": "math_arithmetic",
+                                  "fields": {
+                                    "OP": "MINUS"
+                                  },
+                                  "inputs": {
+                                    "A": {
+                                      "block": {
+                                        "type": "variables_get",
+                                        "fields": {
+                                          "VAR": {
+                                            "id": "x"
+                                          }
+                                        },
+                                        "id": "while_01.0.next.DO.next.VALUE.A"
+                                      }
+                                    },
+                                    "B": {
+                                      "block": {
+                                        "type": "math_number",
+                                        "fields": {
+                                          "NUM": 1
+                                        },
+                                        "id": "while_01.0.next.DO.next.VALUE.B"
+                                      }
+                                    }
+                                  },
+                                  "id": "while_01.0.next.DO.next.VALUE"
+                                }
+                              }
+                            },
+                            "id": "while_01.0.next.DO.next"
+                          }
+                        },
+                        "id": "while_01.0.next.DO"
+                      }
+                    }
+                  },
+                  "id": "while_01.0.next"
+                }
+              },
+              "x": 45,
+              "y": 45,
+              "id": "while_01.0"
+            }
+          ]
+        }
+      }
+    },
+    "grading": {
+      "score": {
+        "output": 30,
+        "test_cases": 30,
+        "required_blocks": 20,
+        "learning": 20
+      },
+      "completion_requirements": [
+        "output",
+        "test_cases",
+        "required_blocks",
+        "state",
+        "nesting",
+        "functions"
+      ],
+      "timeout_ms": 3000,
+      "feedback_steps": [
+        "問題の指示と処理の順番を見直しましょう。",
+        "公開テストを手で計算し、境界の値も調べましょう。",
+        "ヒントを次の段階まで開いて、使うブロックと構造を確認しましょう。"
+      ],
+      "nesting": [
+        [
+          "while",
+          "print"
+        ]
+      ],
+      "output_variables": [
+        "x"
+      ],
+      "learning": [
+        {
+          "type": "variables_set",
+          "variable": "x",
+          "inputs": {
+            "VALUE": {
+              "type": "python_convert",
+              "fields": {
+                "TYPE": "int"
+              },
+              "inputs": {
+                "VALUE": {
+                  "type": "python_input"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "controls_whileUntil",
+          "fields": {
+            "MODE": "WHILE"
+          },
+          "inputs": {
+            "BOOL": {
+              "type": "logic_compare",
+              "fields": {
+                "OP": "GT"
+              },
+              "inputs": {
+                "A": {
+                  "type": "variables_get",
+                  "variable": "x"
+                },
+                "B": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 0
+                  }
+                }
+              }
+            },
+            "DO": {
+              "type": "text_print",
+              "inputs": {
+                "TEXT": {
+                  "type": "variables_get",
+                  "variable": "x"
+                }
+              },
+              "next": {
+                "type": "variables_set",
+                "variable": "x",
+                "inputs": {
+                  "VALUE": {
+                    "type": "math_arithmetic",
+                    "fields": {
+                      "OP": "MINUS"
+                    },
+                    "inputs": {
+                      "A": {
+                        "type": "variables_get",
+                        "variable": "x"
+                      },
+                      "B": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "forbidden_block_scope": "executable"
+  },
+  {
+    "id": "list_01",
+    "course": "basic",
+    "category": "list",
+    "difficulty": 3,
+    "type": "fill",
+    "title": "リストの長さ",
+    "description": "ブロックとPythonの対応を確かめながら取り組みましょう。",
+    "instruction": "numbersを[3,5,7]のまま保ち、numbersの長さを求めるブロックの結果を直接表示してください。",
+    "available_blocks": [
+      "text_print",
+      "text",
+      "math_number",
+      "variables_set",
+      "variables_get",
+      "math_arithmetic",
+      "logic_compare",
+      "logic_boolean",
+      "python_input",
+      "python_convert",
+      "math_change",
+      "lists_create_with",
+      "lists_length"
+    ],
+    "required_blocks": [
+      "lists_length"
+    ],
+    "forbidden_blocks": [],
+    "initial_blocks": {
+      "variables": [
+        {
+          "name": "numbers",
+          "id": "numbers"
+        }
+      ],
+      "blocks": {
+        "languageVersion": 0,
+        "blocks": [
+          {
+            "type": "variables_set",
+            "fields": {
+              "VAR": {
+                "id": "numbers"
+              }
+            },
+            "inputs": {
+              "VALUE": {
+                "block": {
+                  "type": "lists_create_with",
+                  "fields": {},
+                  "inputs": {
+                    "ADD0": {
+                      "block": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 3
+                        },
+                        "id": "list_01.0.VALUE.ADD0"
+                      }
+                    },
+                    "ADD1": {
+                      "block": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 5
+                        },
+                        "id": "list_01.0.VALUE.ADD1"
+                      }
+                    },
+                    "ADD2": {
+                      "block": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 7
+                        },
+                        "id": "list_01.0.VALUE.ADD2"
+                      }
+                    }
+                  },
+                  "extraState": {
+                    "itemCount": 3
+                  },
+                  "id": "list_01.0.VALUE"
+                }
+              }
+            },
+            "id": "list-set",
+            "locked": true,
+            "next": {
+              "block": {
+                "type": "text_print",
+                "fields": {},
+                "inputs": {},
+                "id": "list_01.0.next"
+              }
+            },
+            "x": 45,
+            "y": 45
+          }
+        ]
+      }
+    },
+    "test_cases": [
+      {
+        "input": [],
+        "expected_output": "3",
+        "visibility": "public",
+        "expected_state": {
+          "numbers": [
+            3,
+            5,
+            7
+          ]
+        }
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "numbersを[3,5,7]のまま保ち、numbersの長さを求めるブロックの結果を直接表示してください。"
+      },
+      {
+        "level": 2,
+        "text": "使うブロック：lists_length"
+      },
+      {
+        "level": 3,
+        "text": "入力・値の準備 → 計算や条件・繰り返し → 表示、の順に組み立てましょう。"
+      },
+      {
+        "level": 4,
+        "text": "公開テストの入力を紙に書き、変数の値を1つずつ追ってみましょう。"
+      }
+    ],
+    "solution": {
+      "workspace": {
+        "variables": [
+          {
+            "name": "numbers",
+            "id": "numbers"
+          }
+        ],
+        "blocks": {
+          "languageVersion": 0,
+          "blocks": [
+            {
+              "type": "variables_set",
+              "fields": {
+                "VAR": {
+                  "id": "numbers"
+                }
+              },
+              "inputs": {
+                "VALUE": {
+                  "block": {
+                    "type": "lists_create_with",
+                    "fields": {},
+                    "inputs": {
+                      "ADD0": {
+                        "block": {
+                          "type": "math_number",
+                          "fields": {
+                            "NUM": 3
+                          },
+                          "id": "list_01.0.VALUE.ADD0"
+                        }
+                      },
+                      "ADD1": {
+                        "block": {
+                          "type": "math_number",
+                          "fields": {
+                            "NUM": 5
+                          },
+                          "id": "list_01.0.VALUE.ADD1"
+                        }
+                      },
+                      "ADD2": {
+                        "block": {
+                          "type": "math_number",
+                          "fields": {
+                            "NUM": 7
+                          },
+                          "id": "list_01.0.VALUE.ADD2"
+                        }
+                      }
+                    },
+                    "extraState": {
+                      "itemCount": 3
+                    },
+                    "id": "list_01.0.VALUE"
+                  }
+                }
+              },
+              "id": "list-set",
+              "locked": true,
+              "next": {
+                "block": {
+                  "type": "text_print",
+                  "fields": {},
+                  "inputs": {
+                    "TEXT": {
+                      "block": {
+                        "type": "lists_length",
+                        "fields": {},
+                        "inputs": {
+                          "VALUE": {
+                            "block": {
+                              "type": "variables_get",
+                              "fields": {
+                                "VAR": {
+                                  "id": "numbers"
+                                }
+                              },
+                              "id": "list_01.0.next.TEXT.VALUE"
+                            }
+                          }
+                        },
+                        "id": "list_01.0.next.TEXT"
+                      }
+                    }
+                  },
+                  "id": "list_01.0.next"
+                }
+              },
+              "x": 45,
+              "y": 45
+            }
+          ]
+        }
+      }
+    },
+    "grading": {
+      "score": {
+        "output": 30,
+        "test_cases": 30,
+        "required_blocks": 20,
+        "learning": 20
+      },
+      "completion_requirements": [
+        "output",
+        "test_cases",
+        "required_blocks",
+        "state",
+        "nesting",
+        "functions"
+      ],
+      "timeout_ms": 3000,
+      "feedback_steps": [
+        "問題の指示と処理の順番を見直しましょう。",
+        "公開テストを手で計算し、境界の値も調べましょう。",
+        "ヒントを次の段階まで開いて、使うブロックと構造を確認しましょう。"
+      ],
+      "nesting": [
+        [
+          "print",
+          "lists_length",
+          "variables_get"
+        ]
+      ],
+      "output_variables": [
+        "numbers"
+      ],
+      "learning": [
+        {
+          "type": "text_print",
+          "inputs": {
+            "TEXT": {
+              "type": "lists_length",
+              "inputs": {
+                "VALUE": {
+                  "type": "variables_get",
+                  "variable": "numbers",
+                  "observed": [
+                    3,
+                    5,
+                    7
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "forbidden_block_scope": "executable"
+  },
+  {
+    "id": "function_01",
+    "course": "basic",
+    "category": "function",
+    "difficulty": 3,
+    "type": "build",
+    "title": "2倍を返す関数",
+    "description": "ブロックとPythonの対応を確かめながら取り組みましょう。",
+    "instruction": "引数nの2倍を返すdouble関数を作り、入力した整数を渡して戻り値を表示してください。",
+    "available_blocks": [
+      "text_print",
+      "text",
+      "math_number",
+      "variables_set",
+      "variables_get",
+      "math_arithmetic",
+      "logic_compare",
+      "logic_boolean",
+      "python_input",
+      "python_convert",
+      "math_change",
+      "procedures_defreturn",
+      "procedures_defnoreturn",
+      "procedures_callreturn",
+      "procedures_callnoreturn"
+    ],
+    "required_blocks": [
+      "function",
+      "call"
+    ],
+    "forbidden_blocks": [],
+    "initial_blocks": {
+      "variables": [],
+      "blocks": {
+        "languageVersion": 0,
+        "blocks": []
+      }
+    },
+    "test_cases": [
+      {
+        "input": [
+          "6"
+        ],
+        "expected_output": "12",
+        "visibility": "public"
+      },
+      {
+        "input": [
+          "0"
+        ],
+        "expected_output": "0",
+        "visibility": "hidden"
+      },
+      {
+        "input": [
+          "-3"
+        ],
+        "expected_output": "-6",
+        "visibility": "hidden"
+      },
+      {
+        "input": [
+          "7"
+        ],
+        "expected_output": "14",
+        "visibility": "hidden"
+      },
+      {
+        "input": [
+          "-11"
+        ],
+        "expected_output": "-22",
+        "visibility": "hidden"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "引数nの2倍を返すdouble関数を作り、入力した整数を渡して戻り値を表示してください。"
+      },
+      {
+        "level": 2,
+        "text": "使うブロック：function、call"
+      },
+      {
+        "level": 3,
+        "text": "入力・値の準備 → 計算や条件・繰り返し → 表示、の順に組み立てましょう。"
+      },
+      {
+        "level": 4,
+        "text": "公開テストの入力を紙に書き、変数の値を1つずつ追ってみましょう。"
+      }
+    ],
+    "solution": {
+      "workspace": {
+        "variables": [
+          {
+            "name": "n",
+            "id": "n"
+          }
+        ],
+        "blocks": {
+          "languageVersion": 0,
+          "blocks": [
+            {
+              "type": "procedures_defreturn",
+              "fields": {
+                "NAME": "double"
+              },
+              "inputs": {
+                "RETURN": {
+                  "block": {
+                    "type": "math_arithmetic",
+                    "fields": {
+                      "OP": "MULTIPLY"
+                    },
+                    "inputs": {
+                      "A": {
+                        "block": {
+                          "type": "variables_get",
+                          "fields": {
+                            "VAR": {
+                              "id": "n"
+                            }
+                          },
+                          "id": "function_01.0.RETURN.A"
+                        }
+                      },
+                      "B": {
+                        "block": {
+                          "type": "math_number",
+                          "fields": {
+                            "NUM": 2
+                          },
+                          "id": "function_01.0.RETURN.B"
+                        }
+                      }
+                    },
+                    "id": "function_01.0.RETURN"
+                  }
+                }
+              },
+              "extraState": {
+                "params": [
+                  {
+                    "name": "n",
+                    "id": "n"
+                  }
+                ]
+              },
+              "x": 45,
+              "y": 45,
+              "id": "function_01.0"
+            },
+            {
+              "type": "text_print",
+              "fields": {},
+              "inputs": {
+                "TEXT": {
+                  "block": {
+                    "type": "procedures_callreturn",
+                    "fields": {},
+                    "inputs": {
+                      "ARG0": {
+                        "block": {
+                          "type": "python_convert",
+                          "fields": {
+                            "TYPE": "int"
+                          },
+                          "inputs": {
+                            "VALUE": {
+                              "block": {
+                                "type": "python_input",
+                                "fields": {},
+                                "inputs": {
+                                  "PROMPT": {
+                                    "block": {
+                                      "type": "text",
+                                      "fields": {
+                                        "TEXT": ""
+                                      },
+                                      "id": "function_01.1.TEXT.ARG0.VALUE.PROMPT"
+                                    }
+                                  }
+                                },
+                                "id": "function_01.1.TEXT.ARG0.VALUE"
+                              }
+                            }
+                          },
+                          "id": "function_01.1.TEXT.ARG0"
+                        }
+                      }
+                    },
+                    "extraState": {
+                      "name": "double",
+                      "params": [
+                        "n"
+                      ]
+                    },
+                    "id": "function_01.1.TEXT"
+                  }
+                }
+              },
+              "x": 45,
+              "y": 265,
+              "id": "function_01.1"
+            }
+          ]
+        }
+      }
+    },
+    "grading": {
+      "score": {
+        "output": 30,
+        "test_cases": 30,
+        "required_blocks": 20,
+        "learning": 20
+      },
+      "completion_requirements": [
+        "output",
+        "test_cases",
+        "required_blocks",
+        "state",
+        "nesting",
+        "functions"
+      ],
+      "timeout_ms": 3000,
+      "feedback_steps": [
+        "問題の指示と処理の順番を見直しましょう。",
+        "公開テストを手で計算し、境界の値も調べましょう。",
+        "ヒントを次の段階まで開いて、使うブロックと構造を確認しましょう。"
+      ],
+      "functions": [
+        {
+          "name": "double",
+          "params": [
+            "n"
+          ],
+          "returns": true
+        }
+      ],
+      "nesting": [
+        [
+          "print",
+          "procedures_callreturn"
+        ]
+      ],
+      "learning": [
+        {
+          "type": "procedures_defreturn",
+          "fields": {
+            "NAME": "double"
+          },
+          "inputs": {
+            "RETURN": {
+              "type": "math_arithmetic",
+              "fields": {
+                "OP": "MULTIPLY"
+              },
+              "inputs": {
+                "A": {
+                  "type": "variables_get",
+                  "variable": "n"
+                },
+                "B": {
+                  "type": "math_number",
+                  "fields": {
+                    "NUM": 2
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "text_print",
+          "inputs": {
+            "TEXT": {
+              "type": "procedures_callreturn",
+              "inputs": {
+                "ARG0": {
+                  "type": "python_convert",
+                  "fields": {
+                    "TYPE": "int"
+                  },
+                  "inputs": {
+                    "VALUE": {
+                      "type": "python_input"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "forbidden_block_scope": "executable"
+  },
+  {
+    "id": "math_01",
+    "course": "basic",
+    "category": "math",
+    "difficulty": 3,
+    "type": "build",
+    "title": "平方根を求める",
+    "description": "ブロックとPythonの対応を確かめながら取り組みましょう。",
+    "instruction": "0以上の整数を入力し、mathの平方根を表示してください。",
+    "available_blocks": [
+      "text_print",
+      "text",
+      "math_number",
+      "variables_set",
+      "variables_get",
+      "math_arithmetic",
+      "logic_compare",
+      "logic_boolean",
+      "python_input",
+      "python_convert",
+      "math_change",
+      "lib_sqrt"
+    ],
+    "required_blocks": [
+      "lib_sqrt"
+    ],
+    "forbidden_blocks": [],
+    "initial_blocks": {
+      "variables": [],
+      "blocks": {
+        "languageVersion": 0,
+        "blocks": []
+      }
+    },
+    "test_cases": [
+      {
+        "input": [
+          "16"
+        ],
+        "expected_output": "4.0",
+        "visibility": "public"
+      },
+      {
+        "input": [
+          "9"
+        ],
+        "expected_output": "3.0",
+        "visibility": "public"
+      },
+      {
+        "input": [
+          "0"
+        ],
+        "expected_output": "0.0",
+        "visibility": "hidden"
+      },
+      {
+        "input": [
+          "25"
+        ],
+        "expected_output": "5.0",
+        "visibility": "hidden"
+      },
+      {
+        "input": [
+          "2"
+        ],
+        "expected_output": "1.4142135623730951",
+        "visibility": "hidden"
+      },
+      {
+        "input": [
+          "81"
+        ],
+        "expected_output": "9.0",
+        "visibility": "hidden"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "0以上の整数を入力し、mathの平方根を表示してください。"
+      },
+      {
+        "level": 2,
+        "text": "使うブロック：lib_sqrt"
+      },
+      {
+        "level": 3,
+        "text": "入力・値の準備 → 計算や条件・繰り返し → 表示、の順に組み立てましょう。"
+      },
+      {
+        "level": 4,
+        "text": "公開テストの入力を紙に書き、変数の値を1つずつ追ってみましょう。"
+      }
+    ],
+    "solution": {
+      "workspace": {
+        "variables": [],
+        "blocks": {
+          "languageVersion": 0,
+          "blocks": [
+            {
+              "type": "text_print",
+              "fields": {},
+              "inputs": {
+                "TEXT": {
+                  "block": {
+                    "type": "lib_sqrt",
+                    "fields": {},
+                    "inputs": {
+                      "V0": {
+                        "block": {
+                          "type": "python_convert",
+                          "fields": {
+                            "TYPE": "int"
+                          },
+                          "inputs": {
+                            "VALUE": {
+                              "block": {
+                                "type": "python_input",
+                                "fields": {},
+                                "inputs": {
+                                  "PROMPT": {
+                                    "block": {
+                                      "type": "text",
+                                      "fields": {
+                                        "TEXT": ""
+                                      },
+                                      "id": "math_01.0.TEXT.V0.VALUE.PROMPT"
+                                    }
+                                  }
+                                },
+                                "id": "math_01.0.TEXT.V0.VALUE"
+                              }
+                            }
+                          },
+                          "id": "math_01.0.TEXT.V0"
+                        }
+                      }
+                    },
+                    "id": "math_01.0.TEXT"
+                  }
+                }
+              },
+              "x": 45,
+              "y": 45,
+              "id": "math_01.0"
+            }
+          ]
+        }
+      }
+    },
+    "grading": {
+      "score": {
+        "output": 30,
+        "test_cases": 30,
+        "required_blocks": 20,
+        "learning": 20
+      },
+      "completion_requirements": [
+        "output",
+        "test_cases",
+        "required_blocks",
+        "state",
+        "nesting",
+        "functions"
+      ],
+      "timeout_ms": 3000,
+      "feedback_steps": [
+        "問題の指示と処理の順番を見直しましょう。",
+        "公開テストを手で計算し、境界の値も調べましょう。",
+        "ヒントを次の段階まで開いて、使うブロックと構造を確認しましょう。"
+      ],
+      "nesting": [
+        [
+          "print",
+          "lib_sqrt",
+          "python_input"
+        ]
+      ],
+      "learning": [
+        {
+          "type": "text_print",
+          "inputs": {
+            "TEXT": {
+              "type": "lib_sqrt",
+              "inputs": {
+                "V0": {
+                  "type": "python_convert",
+                  "fields": {
+                    "TYPE": "int"
+                  },
+                  "inputs": {
+                    "VALUE": {
+                      "type": "python_input"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "forbidden_block_scope": "executable"
+  },
+  {
+    "id": "nested_01",
+    "course": "basic",
+    "category": "integrated",
+    "difficulty": 4,
+    "type": "free",
+    "title": "偶数だけを選ぶ",
+    "description": "ブロックとPythonの対応を確かめながら取り組みましょう。",
+    "instruction": "変数iを1〜6まで1ずつ増やすforの内側で、iを2で割った余りが0かifで判定し、iを直接表示してください。",
+    "available_blocks": [
+      "text_print",
+      "text",
+      "math_number",
+      "variables_set",
+      "variables_get",
+      "math_arithmetic",
+      "logic_compare",
+      "logic_boolean",
+      "python_input",
+      "python_convert",
+      "math_change",
+      "math_modulo",
+      "controls_for",
+      "controls_repeat_ext",
+      "controls_forEach",
+      "controls_if"
+    ],
+    "required_blocks": [
+      "for",
+      "if",
+      "text_print"
+    ],
+    "forbidden_blocks": [],
+    "initial_blocks": {
+      "variables": [],
+      "blocks": {
+        "languageVersion": 0,
+        "blocks": []
+      }
+    },
+    "test_cases": [
+      {
+        "input": [],
+        "expected_output": "2\n4\n6",
+        "visibility": "public",
+        "expected_state": {
+          "i": 6
+        }
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "変数iを1〜6まで1ずつ増やすforの内側で、iを2で割った余りが0かifで判定し、iを直接表示してください。"
+      },
+      {
+        "level": 2,
+        "text": "使うブロック：for、if、text_print"
+      },
+      {
+        "level": 3,
+        "text": "入力・値の準備 → 計算や条件・繰り返し → 表示、の順に組み立てましょう。"
+      },
+      {
+        "level": 4,
+        "text": "iを2で割った余りが0のときだけ、iを表示します。"
+      }
+    ],
+    "solution": {
+      "workspace": {
+        "variables": [
+          {
+            "name": "i",
+            "id": "i"
+          }
+        ],
+        "blocks": {
+          "languageVersion": 0,
+          "blocks": [
+            {
+              "type": "controls_for",
+              "fields": {
+                "VAR": {
+                  "id": "i"
+                }
+              },
+              "inputs": {
+                "FROM": {
+                  "block": {
+                    "type": "math_number",
+                    "fields": {
+                      "NUM": 1
+                    },
+                    "id": "nested_01.0.FROM"
+                  }
+                },
+                "TO": {
+                  "block": {
+                    "type": "math_number",
+                    "fields": {
+                      "NUM": 6
+                    },
+                    "id": "nested_01.0.TO"
+                  }
+                },
+                "BY": {
+                  "block": {
+                    "type": "math_number",
+                    "fields": {
+                      "NUM": 1
+                    },
+                    "id": "nested_01.0.BY"
+                  }
+                },
+                "DO": {
+                  "block": {
+                    "type": "controls_if",
+                    "fields": {},
+                    "inputs": {
+                      "IF0": {
+                        "block": {
+                          "type": "logic_compare",
+                          "fields": {
+                            "OP": "EQ"
+                          },
+                          "inputs": {
+                            "A": {
+                              "block": {
+                                "type": "math_modulo",
+                                "fields": {},
+                                "inputs": {
+                                  "DIVIDEND": {
+                                    "block": {
+                                      "type": "variables_get",
+                                      "fields": {
+                                        "VAR": {
+                                          "id": "i"
+                                        }
+                                      },
+                                      "id": "nested_01.0.DO.IF0.A.DIVIDEND"
+                                    }
+                                  },
+                                  "DIVISOR": {
+                                    "block": {
+                                      "type": "math_number",
+                                      "fields": {
+                                        "NUM": 2
+                                      },
+                                      "id": "nested_01.0.DO.IF0.A.DIVISOR"
+                                    }
+                                  }
+                                },
+                                "id": "nested_01.0.DO.IF0.A"
+                              }
+                            },
+                            "B": {
+                              "block": {
+                                "type": "math_number",
+                                "fields": {
+                                  "NUM": 0
+                                },
+                                "id": "nested_01.0.DO.IF0.B"
+                              }
+                            }
+                          },
+                          "id": "nested_01.0.DO.IF0"
+                        }
+                      },
+                      "DO0": {
+                        "block": {
+                          "type": "text_print",
+                          "fields": {},
+                          "inputs": {
+                            "TEXT": {
+                              "block": {
+                                "type": "variables_get",
+                                "fields": {
+                                  "VAR": {
+                                    "id": "i"
+                                  }
+                                },
+                                "id": "nested_01.0.DO.DO0.TEXT"
+                              }
+                            }
+                          },
+                          "id": "nested_01.0.DO.DO0"
+                        }
+                      }
+                    },
+                    "id": "nested_01.0.DO"
+                  }
+                }
+              },
+              "x": 45,
+              "y": 45,
+              "id": "nested_01.0"
+            }
+          ]
+        }
+      }
+    },
+    "grading": {
+      "score": {
+        "output": 30,
+        "test_cases": 30,
+        "required_blocks": 20,
+        "learning": 20
+      },
+      "completion_requirements": [
+        "output",
+        "test_cases",
+        "required_blocks",
+        "state",
+        "nesting",
+        "functions"
+      ],
+      "timeout_ms": 3000,
+      "feedback_steps": [
+        "問題の指示と処理の順番を見直しましょう。",
+        "公開テストを手で計算し、境界の値も調べましょう。",
+        "ヒントを次の段階まで開いて、使うブロックと構造を確認しましょう。"
+      ],
+      "nesting": [
+        [
+          "for",
+          "if",
+          "print"
+        ]
+      ],
+      "hint4": "iを2で割った余りが0のときだけ、iを表示します。",
+      "output_variables": [
+        "i"
+      ],
+      "learning": [
+        {
+          "type": "controls_for",
+          "variable": "i",
+          "inputs": {
+            "FROM": {
+              "type": "math_number",
+              "fields": {
+                "NUM": 1
+              }
+            },
+            "TO": {
+              "type": "math_number",
+              "fields": {
+                "NUM": 6
+              }
+            },
+            "BY": {
+              "type": "math_number",
+              "fields": {
+                "NUM": 1
+              }
+            },
+            "DO": {
+              "type": "controls_if",
+              "inputs": {
+                "IF0": {
+                  "type": "logic_compare",
+                  "fields": {
+                    "OP": "EQ"
+                  },
+                  "inputs": {
+                    "A": {
+                      "type": "math_modulo",
+                      "inputs": {
+                        "DIVIDEND": {
+                          "type": "variables_get",
+                          "variable": "i"
+                        },
+                        "DIVISOR": {
+                          "type": "math_number",
+                          "fields": {
+                            "NUM": 2
+                          }
+                        }
+                      }
+                    },
+                    "B": {
+                      "type": "math_number",
+                      "fields": {
+                        "NUM": 0
+                      }
+                    }
+                  }
+                },
+                "DO0": {
+                  "type": "text_print",
+                  "inputs": {
+                    "TEXT": {
+                      "type": "variables_get",
+                      "variable": "i"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "forbidden_block_scope": "executable"
+  },
+  {
+    "id": "total_01",
+    "course": "basic",
+    "category": "integrated",
+    "difficulty": 5,
+    "type": "free",
+    "title": "1からnまでの合計",
+    "description": "ブロックとPythonの対応を確かめながら取り組みましょう。",
+    "instruction": "0以上の整数nを入力し、forで1〜nの合計を変数totalに保存して表示してください。n=0なら0です。",
+    "available_blocks": [
+      "text_print",
+      "text",
+      "math_number",
+      "variables_set",
+      "variables_get",
+      "math_arithmetic",
+      "logic_compare",
+      "logic_boolean",
+      "python_input",
+      "python_convert",
+      "math_change",
+      "controls_for",
+      "controls_repeat_ext",
+      "controls_forEach",
+      "controls_if"
+    ],
+    "required_blocks": [
+      "for",
+      "if"
+    ],
+    "forbidden_blocks": [],
+    "initial_blocks": {
+      "variables": [],
+      "blocks": {
+        "languageVersion": 0,
+        "blocks": []
+      }
+    },
+    "test_cases": [
+      {
+        "input": [
+          "3"
+        ],
+        "expected_output": "6",
+        "visibility": "public",
+        "expected_state": {
+          "total": 6
+        }
+      },
+      {
+        "input": [
+          "5"
+        ],
+        "expected_output": "15",
+        "visibility": "public",
+        "expected_state": {
+          "total": 15
+        }
+      },
+      {
+        "input": [
+          "0"
+        ],
+        "expected_output": "0",
+        "visibility": "hidden",
+        "expected_state": {
+          "total": 0
+        }
+      },
+      {
+        "input": [
+          "1"
+        ],
+        "expected_output": "1",
+        "visibility": "hidden",
+        "expected_state": {
+          "total": 1
+        }
+      },
+      {
+        "input": [
+          "10"
+        ],
+        "expected_output": "55",
+        "visibility": "hidden",
+        "expected_state": {
+          "total": 55
+        }
+      },
+      {
+        "input": [
+          "2"
+        ],
+        "expected_output": "3",
+        "visibility": "hidden",
+        "expected_state": {
+          "total": 3
+        }
+      },
+      {
+        "input": [
+          "17"
+        ],
+        "expected_output": "153",
+        "visibility": "hidden",
+        "expected_state": {
+          "total": 153
+        }
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "0以上の整数nを入力し、forで1〜nの合計を変数totalに保存して表示してください。n=0なら0です。"
+      },
+      {
+        "level": 2,
+        "text": "使うブロック：for、if"
+      },
+      {
+        "level": 3,
+        "text": "入力・値の準備 → 計算や条件・繰り返し → 表示、の順に組み立てましょう。"
+      },
+      {
+        "level": 4,
+        "text": "total=0から始め、n>0の場合だけ1〜nを足します。"
+      }
+    ],
+    "solution": {
+      "workspace": {
+        "variables": [
+          {
+            "name": "n",
+            "id": "n"
+          },
+          {
+            "name": "i",
+            "id": "i"
+          },
+          {
+            "name": "total",
+            "id": "total"
+          }
+        ],
+        "blocks": {
+          "languageVersion": 0,
+          "blocks": [
+            {
+              "type": "variables_set",
+              "fields": {
+                "VAR": {
+                  "id": "n"
+                }
+              },
+              "inputs": {
+                "VALUE": {
+                  "block": {
+                    "type": "python_convert",
+                    "fields": {
+                      "TYPE": "int"
+                    },
+                    "inputs": {
+                      "VALUE": {
+                        "block": {
+                          "type": "python_input",
+                          "fields": {},
+                          "inputs": {
+                            "PROMPT": {
+                              "block": {
+                                "type": "text",
+                                "fields": {
+                                  "TEXT": ""
+                                },
+                                "id": "total_01.0.VALUE.VALUE.PROMPT"
+                              }
+                            }
+                          },
+                          "id": "total_01.0.VALUE.VALUE"
+                        }
+                      }
+                    },
+                    "id": "total_01.0.VALUE"
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "variables_set",
+                  "fields": {
+                    "VAR": {
+                      "id": "total"
+                    }
+                  },
+                  "inputs": {
+                    "VALUE": {
+                      "block": {
+                        "type": "math_number",
+                        "fields": {
+                          "NUM": 0
+                        },
+                        "id": "total_01.0.next.VALUE"
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "controls_if",
+                      "fields": {},
+                      "inputs": {
+                        "IF0": {
+                          "block": {
+                            "type": "logic_compare",
+                            "fields": {
+                              "OP": "GT"
+                            },
+                            "inputs": {
+                              "A": {
+                                "block": {
+                                  "type": "variables_get",
+                                  "fields": {
+                                    "VAR": {
+                                      "id": "n"
+                                    }
+                                  },
+                                  "id": "total_01.0.next.next.IF0.A"
+                                }
+                              },
+                              "B": {
+                                "block": {
+                                  "type": "math_number",
+                                  "fields": {
+                                    "NUM": 0
+                                  },
+                                  "id": "total_01.0.next.next.IF0.B"
+                                }
+                              }
+                            },
+                            "id": "total_01.0.next.next.IF0"
+                          }
+                        },
+                        "DO0": {
+                          "block": {
+                            "type": "controls_for",
+                            "fields": {
+                              "VAR": {
+                                "id": "i"
+                              }
+                            },
+                            "inputs": {
+                              "FROM": {
+                                "block": {
+                                  "type": "math_number",
+                                  "fields": {
+                                    "NUM": 1
+                                  },
+                                  "id": "total_01.0.next.next.DO0.FROM"
+                                }
+                              },
+                              "TO": {
+                                "block": {
+                                  "type": "variables_get",
+                                  "fields": {
+                                    "VAR": {
+                                      "id": "n"
+                                    }
+                                  },
+                                  "id": "total_01.0.next.next.DO0.TO"
+                                }
+                              },
+                              "BY": {
+                                "block": {
+                                  "type": "math_number",
+                                  "fields": {
+                                    "NUM": 1
+                                  },
+                                  "id": "total_01.0.next.next.DO0.BY"
+                                }
+                              },
+                              "DO": {
+                                "block": {
+                                  "type": "variables_set",
+                                  "fields": {
+                                    "VAR": {
+                                      "id": "total"
+                                    }
+                                  },
+                                  "inputs": {
+                                    "VALUE": {
+                                      "block": {
+                                        "type": "math_arithmetic",
+                                        "fields": {
+                                          "OP": "ADD"
+                                        },
+                                        "inputs": {
+                                          "A": {
+                                            "block": {
+                                              "type": "variables_get",
+                                              "fields": {
+                                                "VAR": {
+                                                  "id": "total"
+                                                }
+                                              },
+                                              "id": "total_01.0.next.next.DO0.DO.VALUE.A"
+                                            }
+                                          },
+                                          "B": {
+                                            "block": {
+                                              "type": "variables_get",
+                                              "fields": {
+                                                "VAR": {
+                                                  "id": "i"
+                                                }
+                                              },
+                                              "id": "total_01.0.next.next.DO0.DO.VALUE.B"
+                                            }
+                                          }
+                                        },
+                                        "id": "total_01.0.next.next.DO0.DO.VALUE"
+                                      }
+                                    }
+                                  },
+                                  "id": "total_01.0.next.next.DO0.DO"
+                                }
+                              }
+                            },
+                            "id": "total_01.0.next.next.DO0"
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "text_print",
+                          "fields": {},
+                          "inputs": {
+                            "TEXT": {
+                              "block": {
+                                "type": "variables_get",
+                                "fields": {
+                                  "VAR": {
+                                    "id": "total"
+                                  }
+                                },
+                                "id": "total_01.0.next.next.next.TEXT"
+                              }
+                            }
+                          },
+                          "id": "total_01.0.next.next.next"
+                        }
+                      },
+                      "id": "total_01.0.next.next"
+                    }
+                  },
+                  "id": "total_01.0.next"
+                }
+              },
+              "x": 45,
+              "y": 45,
+              "id": "total_01.0"
+            }
+          ]
+        }
+      }
+    },
+    "grading": {
+      "score": {
+        "output": 30,
+        "test_cases": 30,
+        "required_blocks": 20,
+        "learning": 20
+      },
+      "completion_requirements": [
+        "output",
+        "test_cases",
+        "required_blocks",
+        "state",
+        "nesting",
+        "functions"
+      ],
+      "timeout_ms": 3000,
+      "feedback_steps": [
+        "問題の指示と処理の順番を見直しましょう。",
+        "公開テストを手で計算し、境界の値も調べましょう。",
+        "ヒントを次の段階まで開いて、使うブロックと構造を確認しましょう。"
+      ],
+      "hint4": "total=0から始め、n>0の場合だけ1〜nを足します。",
+      "nesting": [
+        [
+          "if",
+          "for",
+          "variables_set"
+        ]
+      ],
+      "output_variables": [
+        "total"
+      ],
+      "learning": [
+        {
+          "type": "variables_set",
+          "variable": "n",
+          "inputs": {
+            "VALUE": {
+              "type": "python_convert",
+              "fields": {
+                "TYPE": "int"
+              },
+              "inputs": {
+                "VALUE": {
+                  "type": "python_input"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "variables_set",
+          "variable": "total",
+          "inputs": {
+            "VALUE": {
+              "type": "math_number",
+              "fields": {
+                "NUM": 0
+              }
+            }
+          }
+        },
+        {
+          "type": "controls_for",
+          "variable": "i",
+          "inputs": {
+            "FROM": {
+              "type": "math_number",
+              "fields": {
+                "NUM": 1
+              }
+            },
+            "TO": {
+              "type": "variables_get",
+              "variable": "n"
+            },
+            "BY": {
+              "type": "math_number",
+              "fields": {
+                "NUM": 1
+              }
+            },
+            "DO": {
+              "type": "variables_set",
+              "variable": "total",
+              "inputs": {
+                "VALUE": {
+                  "type": "math_arithmetic",
+                  "fields": {
+                    "OP": "ADD"
+                  },
+                  "inputs": {
+                    "A": {
+                      "type": "variables_get",
+                      "variable": "total"
+                    },
+                    "B": {
+                      "type": "variables_get",
+                      "variable": "i"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "text_print",
+          "inputs": {
+            "TEXT": {
+              "type": "variables_get",
+              "variable": "total"
+            }
+          }
+        }
+      ]
+    },
+    "forbidden_block_scope": "executable"
+  }
+]
